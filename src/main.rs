@@ -13,6 +13,7 @@ mod string_slices;
 mod struct_prac;
 mod traits_rs;
 mod multithreading;
+mod display_trait;
 fn main() {
     stack_heap::stack_heaper();
     println!("Fibonacci of 10 is: {}", fib(10));
