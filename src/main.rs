@@ -1,6 +1,10 @@
+mod string_lenght;
+
 fn main(){
 println!("Fibonacci of 10 is: {}", fib(10));
 println!("Fibonacci of 10 is: {}", fib_dp(10));
+let s = String::from("Hello, world!");
+println!("String length of '{}' is: {}", s, string_lenght::get_string_lenght(&s));
 }
 
 fn fib(n:u32)->u32{
