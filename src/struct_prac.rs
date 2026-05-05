@@ -1,8 +1,8 @@
 // struct are similar to objects in js and they use to create custom data types in rust adn group related data together
 // user.rs
 pub struct User {
-    pub name: String,
-    pub age: u32,
+     name: String,
+    age: u32,
 }
 impl User {
      pub fn new(name: String, age: u32) -> Self {
@@ -10,5 +10,8 @@ impl User {
     }
     pub fn name(&self) -> &str {
         &self.name
+    }
+    pub fn age(&self) -> u32 {
+        self.age
     }
 }
