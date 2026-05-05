@@ -27,6 +27,14 @@ fn main() {
     let _square = enum_prac::Shape::Square(4.0);
     println!("Area of Circle: {:.2}", circle.area());
     println!("Area of Rectangle: {:.2}", rectangle.area());
+
+    // find first "a" in a  string
+    let s3 = String::from("Hello, world!");
+    let _ans3: () = match string_lenght::find_first_a(&s3) {
+        Some(index) => println!("First 'a' found at index: {}", index),
+        None => println!("No 'a' found in the string."),
+    }; 
+
 }
 
 fn fib(n: u32) -> u32 {
