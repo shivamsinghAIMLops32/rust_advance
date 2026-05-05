@@ -1,10 +1,15 @@
-mod string_lenght;
+use crate::struct_prac::User;
 
+mod string_lenght;
+mod struct_prac; // Add this line to declare the module
+    
 fn main(){
 println!("Fibonacci of 10 is: {}", fib(10));
 println!("Fibonacci of 10 is: {}", fib_dp(10));
 let s = String::from("Hello, world!");
 println!("String length of '{}' is: {}", s, string_lenght::get_string_lenght(&s));
+let u = User::new("Shivam".to_string(), 20);
+println!("{}", u.name());
 }
 
 fn fib(n:u32)->u32{
