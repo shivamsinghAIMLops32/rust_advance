@@ -57,3 +57,12 @@ pub fn filter_and_square(arr:Vec<i32>)->Vec<i32>{
 let odd_values = arr.iter().filter(|x| **x%2==0); // return an iterator of even values
 odd_values.map(|x| x*x).collect()   // collect values and convert from iter to vector
 }
+
+
+// iterating over an hashmap
+pub fn hm_iter(hm: &std::collections::hash_map::HashMap<String, i32>) {
+    for (key, value) in hm.iter() {
+        println!("Key: {}, Value: {}", key, value);
+    }
+
+}
