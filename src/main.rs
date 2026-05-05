@@ -12,6 +12,7 @@ mod string_lenght;
 mod string_slices;
 mod struct_prac;
 mod traits_rs;
+mod multithreading;
 fn main() {
     stack_heap::stack_heaper();
     println!("Fibonacci of 10 is: {}", fib(10));
@@ -54,7 +55,7 @@ fn main() {
     let even_numbers = collections_rust::even_filter(arr);
     println!("Even numbers: {:?}", even_numbers);
 
-    let _ans;
+    // let _ans;
     let s10 = String::from("Hello");
     {
         let s11 = String::from("World!");
