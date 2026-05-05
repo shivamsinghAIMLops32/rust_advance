@@ -1,4 +1,5 @@
 use crate::struct_prac::User;
+use std::fs::read_to_string;
 
 mod enum_prac;
 mod string_lenght;
@@ -35,6 +36,11 @@ fn main() {
         None => println!("No 'a' found in the string."),
     }; 
 
+    let content_from_file: Result<String, std::io::Error> = read_to_string("src/test.txt");
+    match content_from_file {
+        Ok(content) => println!("Content of the file:\n{}", content),
+        Err(e) => println!("Error reading file: {}", e),
+    }
 }
 
 fn fib(n: u32) -> u32 {
