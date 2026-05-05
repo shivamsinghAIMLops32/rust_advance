@@ -1,11 +1,15 @@
 use crate::struct_prac::User;
-use std::fs::read_to_string;
+use std::{fs::read_to_string, vec};
 
+mod collections_rust;
 mod enum_prac;
+mod interator_prac;
+mod stack_heap;
 mod string_lenght;
 mod struct_prac;
 
 fn main() {
+    stack_heap::stack_heaper();
     println!("Fibonacci of 10 is: {}", fib(10));
     println!("Fibonacci of 10 is: {}", fib_dp(10));
     let s = String::from("Hello, world!");
@@ -34,13 +38,17 @@ fn main() {
     let _ans3: () = match string_lenght::find_first_a(&s3) {
         Some(index) => println!("First 'a' found at index: {}", index),
         None => println!("No 'a' found in the string."),
-    }; 
+    };
 
     let content_from_file: Result<String, std::io::Error> = read_to_string("src/test.txt");
     match content_from_file {
         Ok(content) => println!("Content of the file:\n{}", content),
         Err(e) => println!("Error reading file: {}", e),
     }
+
+    let arr = vec![1, 2, 3, 4, 5, 6];
+    let even_numbers = collections_rust::even_filter(arr);
+    println!("Even numbers: {:?}", even_numbers);
 }
 
 fn fib(n: u32) -> u32 {

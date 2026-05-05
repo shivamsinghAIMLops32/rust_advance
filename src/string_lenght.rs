@@ -6,7 +6,6 @@ pub fn get_string_lenght(s: &str) -> usize {
     count
 }
 
-
 pub fn find_first_a(s: &str) -> Option<usize> {
     for (i, c) in s.chars().enumerate() {
         if c == 'a' {
