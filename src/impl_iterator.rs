@@ -3,13 +3,13 @@
 use std::string;
 
 struct User {
-    name:String,
-    age:u32,
+    name: String,
+    age: u32,
 }
 
 struct UserList {
-    users:Vec<User>,
-    index:usize,
+    users: Vec<User>,
+    index: usize,
 }
 
 impl Iterator for UserList {
@@ -19,7 +19,10 @@ impl Iterator for UserList {
         if self.index < self.users.len() {
             let user = self.users[self.index].name.clone();
             self.index += 1;
-            Some(User { name: user, age: self.users[self.index].age })
+            Some(User {
+                name: user,
+                age: self.users[self.index].age,
+            })
         } else {
             None
         }

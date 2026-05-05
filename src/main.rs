@@ -3,11 +3,14 @@ use std::{fs::read_to_string, vec};
 
 mod collections_rust;
 mod enum_prac;
+mod generics_rs;
+mod impl_iterator;
 mod interator_prac;
 mod stack_heap;
 mod string_lenght;
+mod string_slices;
 mod struct_prac;
-mod impl_iterator;
+mod traits_rs;
 fn main() {
     stack_heap::stack_heaper();
     println!("Fibonacci of 10 is: {}", fib(10));

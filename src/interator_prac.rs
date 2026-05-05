@@ -40,7 +40,6 @@ pub fn sum_array_using_iterator(arr: Vec<i32>) -> i32 {
     // print!("Sum of array: {:?}", arr); cant access arr here because it has been moved or consumed by into_iter()
 }
 
-
 // iterator adaptors - map, filter, fold, etc
 pub fn square_array_using_map(arr: Vec<i32>) -> Vec<i32> {
     arr.into_iter().map(|x| x * x).collect()
@@ -50,19 +49,16 @@ pub fn filter_even_numbers(arr: Vec<i32>) -> Vec<i32> {
     arr.into_iter().filter(|x| x % 2 == 0).collect()
 }
 
-
 // logic to first filter out odd values and then square those values and create a new vector
 
-pub fn filter_and_square(arr:Vec<i32>)->Vec<i32>{
-let odd_values = arr.iter().filter(|x| **x%2==0); // return an iterator of even values
-odd_values.map(|x| x*x).collect()   // collect values and convert from iter to vector
+pub fn filter_and_square(arr: Vec<i32>) -> Vec<i32> {
+    let odd_values = arr.iter().filter(|x| **x % 2 == 0); // return an iterator of even values
+    odd_values.map(|x| x * x).collect() // collect values and convert from iter to vector
 }
-
 
 // iterating over an hashmap
 pub fn hm_iter(hm: &std::collections::hash_map::HashMap<String, i32>) {
     for (key, value) in hm.iter() {
         println!("Key: {}, Value: {}", key, value);
     }
-
 }
