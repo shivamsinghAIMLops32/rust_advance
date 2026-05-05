@@ -16,3 +16,19 @@ impl std::fmt::Debug for Direction {
         }
     }
 }
+
+pub enum Shape {
+    Circle(f64),         // radius
+    Rectangle(f64, f64), // width, height
+    Square(f64),         // side length
+}
+
+impl Shape {
+    pub fn area(&self) -> f64 {
+        match self {
+            Shape::Circle(radius) => std::f64::consts::PI * radius * radius,
+            Shape::Rectangle(width, height) => width * height,
+            Shape::Square(side) => side * side,
+        }
+    }
+}

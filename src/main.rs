@@ -21,6 +21,12 @@ fn main() {
     let direction = enum_prac::Direction::North;
 
     println!("Direction: {:?}", direction);
+
+    let circle = enum_prac::Shape::Circle(7.0);
+    let rectangle = enum_prac::Shape::Rectangle(5.0, 10.0);
+    let _square = enum_prac::Shape::Square(4.0);
+    println!("Area of Circle: {:.2}", circle.area());
+    println!("Area of Rectangle: {:.2}", rectangle.area());
 }
 
 fn fib(n: u32) -> u32 {
