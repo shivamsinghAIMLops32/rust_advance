@@ -1,11 +1,11 @@
 // struct are similar to objects in js and they use to create custom data types in rust adn group related data together
 // user.rs
 pub struct User {
-     name: String,
+    name: String,
     age: u32,
 }
 impl User {
-     pub fn new(name: String, age: u32) -> Self {
+    pub fn new(name: String, age: u32) -> Self {
         Self { name, age }
     }
     pub fn name(&self) -> &str {
@@ -13,5 +13,10 @@ impl User {
     }
     pub fn age(&self) -> u32 {
         self.age
+    }
+}
+impl std::fmt::Display for User {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "User: {}, Age: {}", self.name, self.age)
     }
 }

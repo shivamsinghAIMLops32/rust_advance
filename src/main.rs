@@ -1,20 +1,30 @@
 use crate::struct_prac::User;
 
+mod enum_prac;
 mod string_lenght;
 mod struct_prac;
-    
-fn main(){
-println!("Fibonacci of 10 is: {}", fib(10));
-println!("Fibonacci of 10 is: {}", fib_dp(10));
-let s = String::from("Hello, world!");
-println!("String length of '{}' is: {}", s, string_lenght::get_string_lenght(&s));
-let u = User::new( "Shivam".to_string(), 20);
-println!("{}", u.name());
-println!("{}", u.age());
+
+fn main() {
+    println!("Fibonacci of 10 is: {}", fib(10));
+    println!("Fibonacci of 10 is: {}", fib_dp(10));
+    let s = String::from("Hello, world!");
+    println!(
+        "String length of '{}' is: {}",
+        s,
+        string_lenght::get_string_lenght(&s)
+    );
+    let u = User::new("Shivam".to_string(), 20);
+    println!("{}", u.name());
+    println!("{}", u.age());
+
+    // enum_prac::Direction::North;
+    let direction = enum_prac::Direction::North;
+
+    println!("Direction: {:?}", direction);
 }
 
-fn fib(n:u32)->u32{
-   return if n <= 1 { n } else { fib(n-1) + fib(n-2) };
+fn fib(n: u32) -> u32 {
+    return if n <= 1 { n } else { fib(n - 1) + fib(n - 2) };
 }
 
 fn fib_dp(n: u32) -> u64 {
@@ -33,4 +43,3 @@ fn fib_dp(n: u32) -> u64 {
 
     curr
 }
-
