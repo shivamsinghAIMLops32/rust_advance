@@ -6,6 +6,7 @@ mod enum_prac;
 mod generics_rs;
 mod impl_iterator;
 mod interator_prac;
+mod lifetime_rust;
 mod stack_heap;
 mod string_lenght;
 mod string_slices;
@@ -52,6 +53,14 @@ fn main() {
     let arr = vec![1, 2, 3, 4, 5, 6];
     let even_numbers = collections_rust::even_filter(arr);
     println!("Even numbers: {:?}", even_numbers);
+
+    let _ans;
+    let s10 = String::from("Hello");
+    {
+        let s11 = String::from("World!");
+        // ans = lifetime_rust::longest(&s10, &s11);
+    }
+    // println!("Longest string: {}", ans); // this tool lesser lifetime of s11 and s10 but it is valid because it is in the same scope as s10 and s11
 }
 
 fn fib(n: u32) -> u32 {
