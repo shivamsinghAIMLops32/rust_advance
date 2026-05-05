@@ -8,7 +8,7 @@ println!("Fibonacci of 10 is: {}", fib(10));
 println!("Fibonacci of 10 is: {}", fib_dp(10));
 let s = String::from("Hello, world!");
 println!("String length of '{}' is: {}", s, string_lenght::get_string_lenght(&s));
-let u = User::new("Shivam".to_string(), 20);
+let u = User::new( "Shivam".to_string(), 20);
 println!("{}", u.name());
 println!("{}", u.age());
 }
