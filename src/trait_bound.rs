@@ -14,6 +14,14 @@ struct DbLogger {
     connection_string: String,
 }
 
+
+// lets implement display trait for dblogger struct
+impl Display for DbLogger{
+     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "({}, {})", self.connection_string, "DbLogger")
+    }
+}
+
 // Implementing the Loggable trait for DbLogger struct 
 impl Loggable for DbLogger {
     fn log(&self) {
@@ -26,8 +34,7 @@ impl Loggable for DbLogger {
 
 // trait bound is a way to specify that a generic type must implement a certain trait. It is used to ensure that the generic type has the necessary functionality to be used in a certain context.
 // best way to implement a trait using where
-fn log_message<T,U>(str:T, logger: U) where T: Clone + Display, U: Loggable {
-    println!("Logging message: {}", str);
+fn log_message<T,U>(str_example: &T, logger: &U) where T: Clone + Display, U: Loggable {
+    println!("Logging message: {}", str_example);
     logger.log();
-
 }
