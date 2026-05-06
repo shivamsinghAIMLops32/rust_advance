@@ -15,6 +15,7 @@ mod string_slices;
 mod struct_prac;
 mod trait_bound;
 mod traits_rs;
+mod result_options_enum;
 fn main() {
     stack_heap::stack_heaper();
     println!("Fibonacci of 10 is: {}", fib(10));
