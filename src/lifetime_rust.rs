@@ -7,15 +7,14 @@ pub fn longest<'a>(str1: &'a str, str2: &'a str) -> &'a str {
     }
 }
 
-
 // lifetimes with structs
 
-struct User2<'a>{
-    name:&'a str,
+struct User2<'a> {
+    name: &'a str,
 }
 
-pub fn iml_user(){
+pub fn iml_user() {
     let name = String::from("Alice");
-    let user1 = User2{name:&name};
-    println!("User name is {}",user1.name);
+    let user1 = User2 { name: &name };
+    println!("User name is {}", user1.name);
 }
